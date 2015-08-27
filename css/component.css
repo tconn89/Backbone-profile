@@ -7,9 +7,10 @@
 
 .grid a {
 	float: left;
-	max-width: 250px;
+
 	width: 25%;
 	color: #333;
+	transition: position 0.5s;
 }
 
 .grid a:nth-child(odd) {
@@ -29,7 +30,6 @@
 	width: 100%;
 	opacity: 0.7;
 	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
 }
 
 .grid figcaption {
@@ -43,7 +43,6 @@
 }
 
 .grid figcaption h2 {
-	margin: 0 0 20px 0;
 	color: #3498db;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -52,15 +51,19 @@
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 }
-
-.grid figcaption p {
-	padding: 0 20px;
-	color: #aaa;
-	font-weight: 300;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
+.grid figcaption h2:not(.sl-title){
+	margin: 0 0 20px 0;
 }
 
+.grid figcaption p {
+	color: #aaa;
+	font-weight: 300;
+}
+
+.grid figcaption p.preclick {
+	transition: opacity 0.3s, transform 0.3s;
+	padding: 0 20px;
+}
 .grid figcaption h2,
 .grid figcaption p {
 	-webkit-transform: translateY(50px);
@@ -104,16 +107,29 @@
 	opacity: 1;
 }
 
-.grid a:hover figcaption h2,
-.grid a:hover figcaption p {
+.grid a:not(.clicked):hover figcaption h2,
+.grid a:not(.clicked):hover figcaption p {
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
+
 
 .grid a:hover figcaption p {
 	opacity: 0;
 }
 
+h2.sl-title {
+	text-align: right;
+	font-size: 36px;
+	margin-right: 50px;
+}
+p.tclick {
+	opacity: 0;
+	font-size: 24px;
+	text-align: right;
+	margin-right: 50px;
+	padding-right:0;
+}
 /* Individual styles */
 .demo-1 body {
 	background: #3498db;
@@ -131,8 +147,7 @@
 	transform: translateY(-50%) translateX(-50%) scale(0.25);
 }
 
-.demo-1 .grid a:hover figure button,
-.demo-3 .grid a:hover figure button {
+.grid a:not(.clicked):hover figure button {
 	opacity: 1;
 	-webkit-transform: translateY(-50%) translateX(-50%) scale(1);
 	transform: translateY(-50%) translateX(-50%) scale(1);
@@ -186,7 +201,8 @@
 	-webkit-transition-duration: 0.1s;
 	transition-duration: 0.1s;
 }
-
+.grid figure {
+}
 .demo-3 body {
 	background: #52be7f;
 }

@@ -1,0 +1,41 @@
+var startData = [
+    {
+        "id": "p1",        
+        "name" : "AAAA",
+        "title" : "BBBB",
+        "background" : "CCCC"
+    },
+    {
+        "id": "p2",
+        "name" : "DDDD",
+        "title" : "EEEE",
+        "background" : "FFFF"
+    },
+    {
+        "id": "p3",        
+        "name" : "Ty Connors",
+        "title" : "World Leader",
+        "background" : "Drinking Beer"
+    }
+];
+
+var addData = [
+    {
+        "id": "p4",        
+        "name" : "sdfsdfsdf",
+        "title" : "sdfsdf",
+        "background" : "sdfsdf"
+    },
+    {
+        "id": "p5",
+        "name" : "DDDssssD",
+        "title" : "EsssEEE",
+        "background" : "ssssFFFF"
+    },
+    {
+        "id": "p6",        
+        "name" : "GGssdsfGG",
+        "title" : "HsdfHHH",
+        "background" : "IIaaaaII"
+    }
+];
