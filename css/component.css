@@ -5,6 +5,9 @@
 	width: 90%;
 }
 
+a, a:active, a:focus, a:visted {
+	outline: none !important; 
+}
 .grid a {
 	float: left;
 
@@ -42,6 +45,10 @@
 	text-align: center;
 }
 
+.grid a.clicked figcaption {
+	left:360px;
+	width: 60%;
+}
 .grid figcaption h2 {
 	color: #3498db;
 	text-transform: uppercase;

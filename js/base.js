@@ -1,4 +1,6 @@
 
+        
+
 var Profile = Backbone.Model.extend();
 
 var ProfileList = Backbone.Collection.extend({
@@ -7,10 +9,10 @@ var ProfileList = Backbone.Collection.extend({
 });
 
 var ProfileView = Backbone.View.extend({
-    el: "#profiles",
+    el: "#grid",
     initialize: function(){
         this.listenTo(this.collection,"add", this.renderItem);          
-        this.template = _.template($('#profileTemplate').html());
+        this.template = _.template($('#template').html());
     },
     render: function () {
         this.collection.each(function(model){
@@ -25,7 +27,9 @@ var ProfileView = Backbone.View.extend({
     }
 });
 
-var profileList = new ProfileList(startData);
-var profilesView = new ProfileView({ collection: profileList });
-profilesView.render();
-profileList.add(addData);
+$(function(){
+  var profileList = new ProfileList(startData);
+  var profilesView = new ProfileView({collection: profileList});
+  profilesView.render();
+  profileList.add(addData);
+});

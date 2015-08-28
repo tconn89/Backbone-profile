@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en" class="demo-1 no-js" data-framework="backbonejs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Backbone Project | Demo 1</title>
+		<meta name="description" content="Backbone Project" />
+		<meta name="keywords" content="backbone animated svg, hover effect, grid, svg shape html, " />
+		<meta name="author" content="Ty Connors Codrops" />
+		<link rel="shortcut icon" href="">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/snap.svg-min.js"></script>
+
+
+
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/SVGDrawingAnimation/"><span>Previous Demo</span></a>
+				<span class="right"><a href="http://cargocollective.com/isaac317">Artwork by Isaac Montemayor</a><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18145"><span>Back to the Codrops Article</span></a></span>
+			</div>
+			<header class="codrops-header">
+				<h1>Shape Hover Effect with SVG<span>Data layer built with backbone</span></h1>	
+				<nav class="codrops-demos">
+					<a class="current-demo" href="">All</a>
+					<a href="">UpgradeUber</a>
+					<a href="">EduMesh</a>
+					<a href="">SwirlyPillow</a>
+				</nav>
+			</header>
+			<section id="grid" class="grid clearfix">
+			<script id="template" type="text/template">
+				<a class="all-tiles atile-one" href="" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+					<figure class="tile-one">
+						<img src="img/6.jpg" />
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+						<figcaption>
+							<h2> <%= title %> </h2>
+							<p class="preclick"> <%= subtitle %> </p>
+							<p class="tclick">  <%= description %> </p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+			</script>
+			</section>
+			<section class="related">
+				<p>If you enjoyed these effects you might also like:</p>
+				<div><a href="http://tympanus.net/Tutorials/CaptionHoverEffects/"><h4>Caption Hover Effects</h4></a></div>
+				<div><a href="http://tympanus.net/Development/AnimatedSVGIcons/"><h4>Animated SVG Icons</h4></a></div>
+			</section>
+		</div><!-- /container -->
+		<!-- For the demo ad only -->   
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/backbone-min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/profiles.json"></script>
+
+
+<script>
+	$(function() {
+
+		function init() {
+			var speed = 250,
+				easing = mina.easeinout;
+
+			[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+				var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+					pathConfig = {
+						from : path.attr( 'd' ),
+						to : el.getAttribute( 'data-path-hover' )
+					};
+
+				el.addEventListener( 'mouseenter', function() {
+					path.animate( { 'path' : pathConfig.to }, speed, easing );
+				} );
+
+				el.addEventListener( 'mouseleave', function() {
+					path.animate( { 'path' : pathConfig.from }, speed, easing );
+				} );
+			} );
+		}
+
+		init();
+
+	});
+</script>
+
+<script src="js/animate.js"></script>
+
+	</body>
+</html>
