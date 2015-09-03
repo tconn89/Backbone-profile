@@ -1,41 +1,75 @@
 var startData = [
     {
-        "id": "p1",        
+        "id": 0,        
+        "title" : "Backbone js",
+        "subtitle" : "Data-driven web layouts",
+        "description" : "My knowledge of this library allows me to create more complex webpages using custom templates and JSON data through MVC architecture.",
+        "imgPath" : "img/backbone1.png"
+    },
+    {
+        "id": 1,        
+        "title" : "jQuery",
+        "subtitle" : "Write less, do more",
+        "description" : "The default library for solving my problems, I've written drag & drop apps in jQuery as well as animations.",
+        "imgPath" : "img/jquery.png"
+        },
+    {
+        "id": 2,        
         "title" : "revolution",
         "subtitle" : "Artificial intelligence",
-        "description" : "Algorithms and machine learning will cause a new host of problems to humanity including job security, managing super intelligence, and robot safety"
+        "description" : "Algorithms and machine learning will cause a new host of problems to humanity including job security, managing super intelligence, and robot safety",
+        "imgPath" : "img/6.jpg"
     },
     {
-        "id": "p2",
+        "id": 3,
         "title" : "Mars Colonization",
         "subtitle" : "Back up the human hard drive on a second disk",
-        "description" : "Not to mention how fun solving interstellar travel is"
+        "description" : "Not to mention how fun solving interstellar travel is",
+        "imgPath" : "img/6.jpg"
     },
     {
-        "id": "p3",        
+        "id": 4,        
         "title" : "Ty Connors",
         "subtitle" : "World Leader",
-        "description" : "Embraces cyberculture to compete with the coming intelligence explosion"
+        "description" : "Embraces cyberculture to compete with the coming intelligence explosion",
+        "imgPath" : "img/6.jpg"
     }
 ];
 
 var addData = [
     {
-        "id": "p4",        
+        "id": 5,        
         "title" : "charming",
-        "subtitle" : "SVD Hacker",
-        "description" : "mucking about in the driverless vehicle space"
+        "subtitle" : "SDV Hacker",
+        "description" : "mucking about in the driverless vehicle space",
+        "imgPath" : "img/6.jpg"
     },
     {
-        "id": "p5",
+        "id": 6,
         "title" : "Son Goku",
         "subtitle" : "Must attain super saiyan five!",
-        "description" : "AAAAaaaaahhhhhhhh, ahhhhhhhhhhhh!!!!!!!"
+        "description" : "AAAAaaaaahhhhhhhh, ahhhhhhhhhhhh!!!!!!!",
+        "imgPath" : "img/6.jpg"
     },
     {
-        "id": "p6",        
+        "id": 7,        
         "title" : "Rude Boy",
-        "subtitle" : "What gwan, Rasta?",
-        "description" : "Learning about the globalization of cultures is fun"
+        "subtitle" : "What a gwan, Rasta?",
+        "description" : "Learning about the globalization of cultures is fun",
+        "imgPath" : "img/6.jpg"
+    },
+    {
+        "id": 8,        
+        "title" : "Alien Life",
+        "subtitle" : "The Fermi Paradox can't be ignored",
+        "description" : "Ever since we tested our first nuclear weapon in 1947, UFO sitings have sky rocketed",
+        "imgPath" : "img/6.jpg"
+    },
+    {
+        "id": 9,        
+        "title" : "Global Warming",
+        "subtitle" : "Rising temperatures will make it hot",
+        "description" : "Tesla to the rescue!",
+        "imgPath" : "img/6.jpg"
     }
 ];

@@ -32,7 +32,15 @@ function slideClosed(tile) {
 	var $tile = tile;
   $tile.find('p.preclick').css('display','block');
   $tile.find('p.tclick').css('display','none');
-  $tile.find('img').animate({width: '100%'},dt);
+  $tile.find('img').animate({width: '100%'},{
+    duration: dt,
+    complete: function(){
+      var tile = App.tileList.where({clicked:true})[0];
+      var id = tile.get('id');
+      var idminus = id - 1;
+      $('[data-id=' + id + ']').insertAfter($('[data-id='+ idminus +']'));
+    }
+  });
   $tile.animate({width:defaultWidth}, dt);
 
   tileFade();
@@ -47,14 +55,21 @@ function slideClosed(tile) {
 $(document).ready(function(){
   var TriggerClick = 0;
 
-  // !!!!!! OMG REFACTOR CLICK FUNCTION !!!!!!!!!
 
   $('.all-tiles').click(function(e){
 
   	console.log(this);
   	e.preventDefault();
+    // Nothing Open
     if($('.clicked').length == 0){
-    	// Nothing Open
+
+      // Absurdly complicated re-ordering
+      var tileIndex = e.currentTarget.attributes[2].value; //data-id attribute
+      if(tileIndex%4 != 0){
+        var row = Math.floor(tileIndex/4);
+        var first = $('.grid').children().eq(4*row);
+        $(this).insertBefore(first);
+      }
       slideOpen($(this));
     }
     else{
@@ -62,6 +77,7 @@ $(document).ready(function(){
     	if($(this)[0] == $('.clicked')[0]){
     		// User clicked on same tile
 	    	slideClosed($('.clicked'));
+      // $(this).insertAfter($('.grid').children().eq(tileIndex));
     	}
     	else{
     		// User clicked elsewhere

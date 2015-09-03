@@ -1,35 +1,48 @@
 
-        
+var App = new Object();        
 
-var Profile = Backbone.Model.extend();
+var Tile = Backbone.Model.extend({
+  defaults: {
+    clicked: false
+  },
 
-var ProfileList = Backbone.Collection.extend({
-    model: Profile,
-    url: 'jsonSample.json'
 });
 
-var ProfileView = Backbone.View.extend({
+var TileList = Backbone.Collection.extend({
+    model: Tile
+});
+
+var TileView = Backbone.View.extend({
     el: "#grid",
     initialize: function(){
         this.listenTo(this.collection,"add", this.renderItem);          
         this.template = _.template($('#template').html());
     },
+    events: {
+      "click .all-tiles"   : "toggleClick"
+    },
+    toggleClick: function(e) {
+      var id =  e.currentTarget.attributes[2].value;
+      var tile =  this.collection.where({'id':Number(id)})[0];
+      tile.set('clicked',!tile.get('clicked'));
+    },
     render: function () {
         this.collection.each(function(model){
-             var profileTemplate = this.template(model.toJSON());
-             this.$el.append(profileTemplate);
+             var tileTemplate = this.template(model.toJSON());
+             this.$el.append(tileTemplate);
         }, this);        
         return this;
     },
-    renderItem: function(profile) {
-         var profileTemplate = this.template(profile.toJSON());
-         this.$el.append(profileTemplate);        
+    renderItem: function(tile) {
+         var tileTemplate = this.template(tile.toJSON());
+         this.$el.append(tileTemplate);        
     }
 });
 
 $(function(){
-  var profileList = new ProfileList(startData);
-  var profilesView = new ProfileView({collection: profileList});
-  profilesView.render();
-  profileList.add(addData);
+  App.tileList = new TileList(startData);
+  App.tilesView = new TileView({collection: App.tileList});
+  App.tilesView.render();
+  App.tileList.add(addData);
+
 });

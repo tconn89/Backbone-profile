@@ -35,20 +35,6 @@
 				</nav>
 			</header>
 			<section id="grid" class="grid clearfix">
-			<script id="template" type="text/template">
-				<a class="all-tiles atile-one" href="" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-					<figure class="tile-one">
-						<img src="img/6.jpg" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-						<figcaption>
-							<h2> <%= title %> </h2>
-							<p class="preclick"> <%= subtitle %> </p>
-							<p class="tclick">  <%= description %> </p>
-							<button>View</button>
-						</figcaption>
-					</figure>
-				</a>
-			</script>
 			</section>
 			<section class="related">
 				<p>If you enjoyed these effects you might also like:</p>
@@ -64,6 +50,20 @@
 <script src="js/profiles.json"></script>
 
 
+<script id="template" type="text/template">
+	<a class="all-tiles" href="" data-id="<%= id %>" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+		<figure class="tile-one">
+			<img src=" <%= imgPath %> " />
+			<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+			<figcaption>
+				<h2> <%= title %> </h2>
+				<p class="preclick"> <%= subtitle %> </p>
+				<p class="tclick">  <%= description %> </p>
+				<button>View</button>
+			</figcaption>
+		</figure>
+	</a>
+</script>
 <script>
 	$(function() {
 
