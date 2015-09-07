@@ -15,11 +15,13 @@ a, a:active, a:focus, a:visted {
 	color: #333;
 	transition: position 0.5s;
 	
-	
 }
 
+.firstCol{
+	clear:both;
+}
 .grid a:nth-child(odd) {
-	margin: 30px 0 -30px 0;
+	 margin: 30px 0 -30px 0; 
 }
 
 .grid figure {
@@ -50,6 +52,12 @@ a, a:active, a:focus, a:visted {
 .grid a.clicked figcaption {
 	left:360px;
 	width: 60%;
+}
+.clicked{
+	margin-top:30px;
+}
+.grid a {
+	overflow: hidden;
 }
 .grid figcaption h2 {
 	color: #3498db;
@@ -234,7 +242,7 @@ p.tclick {
 	}
 
 	.grid a:nth-child(odd) {
-		margin: 0;
+		/* margin: 0;*/
 	}
 
 	.grid a:nth-child(3n-1) {
@@ -255,8 +263,8 @@ p.tclick {
 		margin: 0;
 	}
 
-	.grid a:nth-child(even) {
-		margin: 30px 0 -30px 0;
+	.grid a:nth-child(odd) {
+		 margin: 30px 0 -30px 0; 
 	}
 
 
@@ -283,6 +291,6 @@ p.tclick {
 	}
 
 	.grid a:nth-child(even) {
-		margin: 0;
+		/* margin: 0; */
 	}
 }

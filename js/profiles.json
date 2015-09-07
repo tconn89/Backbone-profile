@@ -1,4 +1,4 @@
-var startData = [
+var allData = [
     {
         "id": 0,        
         "title" : "Backbone js",
@@ -17,30 +17,30 @@ var startData = [
         "id": 2,        
         "title" : "revolution",
         "subtitle" : "Artificial intelligence",
-        "description" : "Algorithms and machine learning will cause a new host of problems to humanity including job security, managing super intelligence, and robot safety",
-        "imgPath" : "img/6.jpg"
+        "description" : "Machine learning is poised to disrupt our way of life", 
+        "imgPath" : "img/robotics.jpg"
     },
     {
         "id": 3,
         "title" : "Mars Colonization",
         "subtitle" : "Back up the human hard drive on a second disk",
         "description" : "Not to mention how fun solving interstellar travel is",
-        "imgPath" : "img/6.jpg"
+        "imgPath" : "img/mars.jpg"
     },
     {
         "id": 4,        
         "title" : "Ty Connors",
-        "subtitle" : "World Leader",
+        "subtitle" : "Web Developer",
         "description" : "Embraces cyberculture to compete with the coming intelligence explosion",
         "imgPath" : "img/6.jpg"
     }
 ];
 
-var addData = [
+var skillsData = [
     {
         "id": 5,        
-        "title" : "charming",
-        "subtitle" : "SDV Hacker",
+        "title" : "Upgrade Uber",
+        "subtitle" : "Driverless taxis to optimize transport",
         "description" : "mucking about in the driverless vehicle space",
         "imgPath" : "img/6.jpg"
     },
@@ -49,7 +49,7 @@ var addData = [
         "title" : "Son Goku",
         "subtitle" : "Must attain super saiyan five!",
         "description" : "AAAAaaaaahhhhhhhh, ahhhhhhhhhhhh!!!!!!!",
-        "imgPath" : "img/6.jpg"
+        "imgPath" : "img/goku.jpg"
     },
     {
         "id": 7,        
@@ -61,15 +61,50 @@ var addData = [
     {
         "id": 8,        
         "title" : "Alien Life",
-        "subtitle" : "The Fermi Paradox can't be ignored",
+        "subtitle" : "The Fermi Paradox is real",
         "description" : "Ever since we tested our first nuclear weapon in 1947, UFO sitings have sky rocketed",
-        "imgPath" : "img/6.jpg"
+        "imgPath" : "img/universe.jpg"
     },
     {
         "id": 9,        
         "title" : "Global Warming",
-        "subtitle" : "Rising temperatures will make it hot",
+        "subtitle" : "Rising temperatures will make it rather hot",
         "description" : "Tesla to the rescue!",
         "imgPath" : "img/6.jpg"
     }
 ];
+
+var projectsData = [
+    {
+        "id": 10,        
+        "title" : "Park it",
+        "subtitle" : "Envisioning how driverless Ubers will end parking",
+        "description" : "Highlights parking areas and suggests alternative uses for them",
+        "imgPath" : "img/6.jpg"
+    },
+    {
+        "id": 11,
+        "title" : "EduMesh",
+        "subtitle" : "Changing the way schools communicate",
+        "description" : "Demo built in wordpress here",
+        "imgPath" : "img/6.jpg"
+    }
+
+];
+var socialData = [
+    {
+        "id": 12,
+        "title" : "Twitter",
+        "subtitle" : "@neuronSwarm",
+        "description" : "",
+        "imgPath" : "img/6.jpg"
+    },
+    {
+        "id": 13,
+        "title" : "Linkedin",
+        "subtitle" : "My professional network",
+        "description" : "",
+        "imgPath" : "img/6.jpg"
+    }
+];
+var otherData = [];

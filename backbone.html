@@ -22,16 +22,17 @@
 		<div class="container">
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
-				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/SVGDrawingAnimation/"><span>Previous Demo</span></a>
-				<span class="right"><a href="http://cargocollective.com/isaac317">Artwork by Isaac Montemayor</a><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18145"><span>Back to the Codrops Article</span></a></span>
+				<a class="codrops-icon codrops-icon-prev" href="http://tyconnors.com"><span>Back to TyConnors.com</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18145"><span>Thanks to Codrops for the template</span></a></span>
 			</div>
 			<header class="codrops-header">
-				<h1>Shape Hover Effect with SVG<span>Data layer built with backbone</span></h1>	
+				<h1>Parts of a Whole<span>Data layer built with backbone</span></h1>	
 				<nav class="codrops-demos">
-					<a class="current-demo" href="">All</a>
-					<a href="">UpgradeUber</a>
-					<a href="">EduMesh</a>
-					<a href="">SwirlyPillow</a>
+					<a class="all current-demo" href>All</a>
+					<a class="skills"href>Skills</a>
+					<a class="projects"href>Projects</a>
+					<a class="social"href>Social Media</a>
+					<a class="other"href>Other</a>
 				</nav>
 			</header>
 			<section id="grid" class="grid clearfix">
@@ -46,13 +47,17 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/underscore.js"></script>
 <script src="js/backbone-min.js"></script>
+<script src="js/animate.js"></script>
 <script src="js/base.js"></script>
 <script src="js/profiles.json"></script>
 
 
 <script id="template" type="text/template">
-	<a class="all-tiles" href="" data-id="<%= id %>" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-		<figure class="tile-one">
+	<% if (index%4 == 0) { %>
+	<a class="all-tiles firstCol" 
+<% }else {  %>
+	<a class="all-tiles" <% } %> href="" data-id="<%= index %>" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
+		<figure>
 			<img src=" <%= imgPath %> " />
 			<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
 			<figcaption>
@@ -65,8 +70,6 @@
 	</a>
 </script>
 <script>
-	$(function() {
-
 		function init() {
 			var speed = 250,
 				easing = mina.easeinout;
@@ -87,13 +90,14 @@
 				} );
 			} );
 		}
+	$(function() {
+
 
 		init();
 
 	});
 </script>
 
-<script src="js/animate.js"></script>
 
 	</body>
 </html>

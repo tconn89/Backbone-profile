@@ -12,3 +12,11 @@ https://lostechies.com/derickbailey/2011/10/11/backbone-js-getting-the-model-for
 ### Click event management
 
 Hard to decide where to have backbone manage click events or jQuery in animate.js
+
+### Impatient users could break ordering
+
+Due to slow animation time and swift clicking on different tiles.
+
+### Miscellaneous
+
+At first, I thought replacing the collection with a new one was possible, but it seems just calling reset on the view then adding new data to the collection is the way to go.
