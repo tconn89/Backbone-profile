@@ -4,6 +4,12 @@
 ### Model Attribute: Index
 Adding indexes to each tile model to keep track of their order.  This is needed because the animation reorders the tiles to fit neatly on the screen.  Putting the tiles back in the correct order adds to a better user experience.
 
+### Structure of view template
+
+is not thorough enough to easily solve a bug with finding all the tiles in a row.  Changing the structure will propogate throughout the system and cause .grid a to break.  Will now have to be .grid div a
+
+On the other hand I could add a row attribute and get everything in the row.  that might be easier, but the animation effect needed down the line might require a parent div anyway.
+
 ### Views for models and collections vs data-id attributes
 Two different ways of managing events on your models
 

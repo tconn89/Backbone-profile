@@ -1,5 +1,16 @@
 var allData = [
     {
+        "id": 4,        
+        "title" : "Ty Connors",
+        "subtitle" : "Web Developer",
+        "description" : "Embraces cyberculture to compete with the coming intelligence explosion",
+        "imgPath" : "img/6.jpg"
+    }
+];
+
+var skillsData = [
+
+    {
         "id": 0,        
         "title" : "Backbone js",
         "subtitle" : "Data-driven web layouts",
@@ -12,7 +23,57 @@ var allData = [
         "subtitle" : "Write less, do more",
         "description" : "The default library for solving my problems, I've written drag & drop apps in jQuery as well as animations.",
         "imgPath" : "img/jquery.png"
-        },
+    },
+    {
+        "id": 50,        
+        "title" : "Vim",
+        "subtitle" : "Programmable code editor",
+        "description" : "Enables mouse-free code manipulation and powerful macros",
+        "imgPath" : "img/3.png"
+    },
+];
+
+var projectsData = [
+    {
+        "id": 10,        
+        "title" : "Park it",
+        "subtitle" : "Envisioning how driverless Ubers will end parking",
+        "description" : "Highlights parking areas and suggests alternative uses for them",
+        "imgPath" : "img/parkit.png"
+    },
+    {
+        "id": 5,        
+        "title" : "Upgrade Uber",
+        "subtitle" : "Driverless taxis to optimize transport",
+        "description" : "mucking about in the driverless vehicle space",
+        "imgPath" : "img/upgrade.png"
+    },
+    {
+        "id": 11,
+        "title" : "EduMesh",
+        "subtitle" : "Changing the way schools communicate",
+        "description" : "Demo built in wordpress here",
+        "imgPath" : "img/edumesh.png"
+    }
+
+];
+var socialData = [
+    {
+        "id": 12,
+        "title" : "Twitter",
+        "subtitle" : "@neuronSwarm",
+        "description" : "",
+        "imgPath" : "img/socialmedia.png"
+    },
+    {
+        "id": 13,
+        "title" : "Linkedin",
+        "subtitle" : "My professional network",
+        "description" : "",
+        "imgPath" : "img/socialmedia.png"
+    }
+];
+var otherData = [
     {
         "id": 2,        
         "title" : "revolution",
@@ -28,37 +89,6 @@ var allData = [
         "imgPath" : "img/mars.jpg"
     },
     {
-        "id": 4,        
-        "title" : "Ty Connors",
-        "subtitle" : "Web Developer",
-        "description" : "Embraces cyberculture to compete with the coming intelligence explosion",
-        "imgPath" : "img/6.jpg"
-    }
-];
-
-var skillsData = [
-    {
-        "id": 5,        
-        "title" : "Upgrade Uber",
-        "subtitle" : "Driverless taxis to optimize transport",
-        "description" : "mucking about in the driverless vehicle space",
-        "imgPath" : "img/6.jpg"
-    },
-    {
-        "id": 6,
-        "title" : "Son Goku",
-        "subtitle" : "Must attain super saiyan five!",
-        "description" : "AAAAaaaaahhhhhhhh, ahhhhhhhhhhhh!!!!!!!",
-        "imgPath" : "img/goku.jpg"
-    },
-    {
-        "id": 7,        
-        "title" : "Rude Boy",
-        "subtitle" : "What a gwan, Rasta?",
-        "description" : "Learning about the globalization of cultures is fun",
-        "imgPath" : "img/6.jpg"
-    },
-    {
         "id": 8,        
         "title" : "Alien Life",
         "subtitle" : "The Fermi Paradox is real",
@@ -70,41 +100,6 @@ var skillsData = [
         "title" : "Global Warming",
         "subtitle" : "Rising temperatures will make it rather hot",
         "description" : "Tesla to the rescue!",
-        "imgPath" : "img/6.jpg"
+        "imgPath" : "img/warming.jpg"
     }
 ];
-
-var projectsData = [
-    {
-        "id": 10,        
-        "title" : "Park it",
-        "subtitle" : "Envisioning how driverless Ubers will end parking",
-        "description" : "Highlights parking areas and suggests alternative uses for them",
-        "imgPath" : "img/6.jpg"
-    },
-    {
-        "id": 11,
-        "title" : "EduMesh",
-        "subtitle" : "Changing the way schools communicate",
-        "description" : "Demo built in wordpress here",
-        "imgPath" : "img/6.jpg"
-    }
-
-];
-var socialData = [
-    {
-        "id": 12,
-        "title" : "Twitter",
-        "subtitle" : "@neuronSwarm",
-        "description" : "",
-        "imgPath" : "img/6.jpg"
-    },
-    {
-        "id": 13,
-        "title" : "Linkedin",
-        "subtitle" : "My professional network",
-        "description" : "",
-        "imgPath" : "img/6.jpg"
-    }
-];
-var otherData = [];

@@ -26,13 +26,12 @@
 				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18145"><span>Thanks to Codrops for the template</span></a></span>
 			</div>
 			<header class="codrops-header">
-				<h1>Parts of a Whole<span>Data layer built with backbone</span></h1>	
+				<h1>Hello World<span>Data layer built with backbone</span></h1>	
 				<nav class="codrops-demos">
 					<a class="all current-demo" href>All</a>
 					<a class="skills"href>Skills</a>
 					<a class="projects"href>Projects</a>
-					<a class="social"href>Social Media</a>
-					<a class="other"href>Other</a>
+					<a class="other"href>Pursuits</a>
 				</nav>
 			</header>
 			<section id="grid" class="grid clearfix">
@@ -53,7 +52,7 @@
 
 
 <script id="template" type="text/template">
-	<% if (index%4 == 0) { %>
+<% if (index%App.COLUMNS == 0) { %>
 	<a class="all-tiles firstCol" 
 <% }else {  %>
 	<a class="all-tiles" <% } %> href="" data-id="<%= index %>" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">

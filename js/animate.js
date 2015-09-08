@@ -7,16 +7,15 @@ function tileFade() {
    	function(){$(this).animate({'opacity':'1'},dt/2)}
   );
 }
-function slideOpen(tile) {
+function slideOpen($tile, tile) {
   defaultWidth = $('.all-tiles').width();
 	console.log('open');
-	var $tile = tile;
   $tile.addClass('clicked');
   $tile.find('img').animate({width: '30%'},dt);
   $tile.find('p.preclick').css('display','none');
   $tile.find('p.tclick').css('display','block');
   $tile.css('max-width','1000');
-  tile = App.tileList.findWhere({'index':Number($tile.attr('data-id'))});
+
   offOthers(tile);
   $tile.animate({width:$('#grid').width(),}, dt);
 
@@ -48,6 +47,21 @@ function slideClosed($tile, tile) {
   $tile.find('h2').removeClass('sl-title');
   $tile.find('img').css('opacity','0.7');
 }
+function noAnimateClosed($tile,tile){
+
+  $tile.find('p.preclick').css('display','block');
+  $tile.find('p.tclick').css('display','none');
+
+  $tile.find('img').css('width','100%');
+  $tile.css('width', defaultWidth);
+  onOthers(tile);
+  $tile.removeClass('clicked');
+  $tile.find('svg').toggle();
+  $tile.css('margin-bottom','-30px');
+  $('.tclick').css('opacity','0');
+  $tile.find('h2').removeClass('sl-title');
+  $tile.find('img').css('opacity','0.7');
+}
 function animate(e, tile){
   e.preventDefault();
   // Nothing Open
@@ -55,12 +69,12 @@ function animate(e, tile){
 
     // Absurdly complicated re-ordering
     var tileIndex = e.currentTarget.attributes[2].value; //data-id attribute
-    if(tileIndex%4 != 0){
+    if(tileIndex%App.COLUMNS != 0){
       var row = Math.floor(tileIndex/4);
       var first = $('.grid').children().eq(4*row);
       $(e.currentTarget).insertBefore(first);
     }
-    slideOpen($(e.currentTarget));
+    slideOpen($(e.currentTarget),tile);
   }
   else{
     // Something is open
@@ -71,44 +85,44 @@ function animate(e, tile){
     }
     else{
       // User clicked elsewhere
-      slideClosed($('.clicked'), tile);
-      slideOpen($(e.currentTarget));
+      noAnimateClosed($('.clicked'), App.tileList.findWhere({clicked:true}));
+      slideOpen($(e.currentTarget),tile);
     }
   }
 
 }
 
 function offOthers(tile){
-
-  var id = tile.get('index');
-  var set;
-  var t1 = tile.next();
-  var p1 = tile.prev();
-    if(id%4==0){
-        set = getJ(t1).add(getJ(t1.next())).add(getJ(t1.next().next()));
+  var rowTiles = tile.collection.getModels(tile.get('row')),
+      id = tile.get('index'),
+      mod = id%App.COLUMNS,
+      set;
+  if(rowTiles.length == 1){
+    set = $();
+    return
+  }
+  rowTiles.forEach(function(tile, i){
+    if(i!=mod){
+      if(!set)
+        set = getJ(rowTiles[i]);
+      else
+        set = set.add(getJ(rowTiles[i]));
     }
-    if(id%4==1){
-      set = getJ(p1).add(getJ(t1)).add(getJ(t1.next()));
-    }
-    if(id%4==2){
-      set = getJ(p1.prev()).add(getJ(p1)).add(getJ(t1));
-    }
-    if(id%4==3){
-      set = getJ(p1.prev().prev()).add(getJ(p1.prev())).add(getJ(p1));
-    }
-
+  });
   App.set = set;
   App.set.css('display','none');
 }
 function onOthers(tile){
+  if(tile.collection.getModels(tile.get('row')).length==1)
+    return
   App.set.css('display','block');
-  if(tile.get('index')%4 != 0)
+  if(tile.get('index')%App.COLUMNS != 0)
     getJ(tile).insertAfter(getJ(tile.prev()));
 }
 function getJ(tile){
   if(tile){
-  var id = tile.get('index');
-  return $('[data-id=' + id + ']');
+    var id = tile.get('index');
+    return $('[data-id=' + id + ']');
   }
   return $('');
 }
